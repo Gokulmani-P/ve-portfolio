@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gokulmani | Video Editor Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="logo"><a href="#home">Gokulmani</a></div>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section hero">
+    <div class="container two-column">
+        <div>
+            <h1>Hello, I'm <span>Gokulmani</span></h1>
+            <h2 id="animated-text">Video Editor | Crafting Engaging Stories</h2>
+            <p>Specializing in storytelling, post-production, motion graphics, and social media videos.</p>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+        <div class="image-frame">
+            <img src="images/profile.png" alt="Profile Image">
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <div class="container two-column">
+        <div class="image-frame">
+            <img src="images/about-me.png" alt="About Me">
+        </div>
+        <div>
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a video editor with experience creating engaging content for social media platforms like YouTube, Instagram, and TikTok. 
+                I work on brand videos, reels, and short promotional clips that capture attention and communicate messages effectively.
+            </p>
+            <p>
+                Skilled in Adobe Premiere Pro, After Effects, CapCut, color grading, motion graphics, and audio editing. 
+                I focus on storytelling, pacing, and visual appeal to create content that resonates with viewers and drives engagement.
+            </p>
+
+            <div class="about-buttons">
+                <a href="images/VE-gokulmani-resume.pdf" class="btn resume-btn" download="VE-gokulmani-resume.pdf">
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title center">Skills & Tools</h2>
+        <div class="tools-grid">
+            <div class="tool-box"><i class="fa-solid fa-video"></i><span>Adobe Premiere Pro</span></div>
+            <div class="tool-box"><i class="fa-solid fa-film"></i><span>After Effects</span></div>
+            <div class="tool-box"><i class="fa-solid fa-clapperboard"></i><span>CapCut / Mobile Editing</span></div>
+            <div class="tool-box"><i class="fa-solid fa-palette"></i><span>Color Grading</span></div>
+            <div class="tool-box"><i class="fa-solid fa-music"></i><span>Audio Editing</span></div>
+            <div class="tool-box"><i class="fa-solid fa-play"></i><span>Motion Graphics</span></div>
+            <div class="tool-box"><i class="fa-solid fa-pen-nib"></i><span>Visual Storytelling</span></div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WORKS -->
+<section id="works" class="section">
+    <div class="container">
+        <h2 class="section-title center">My Video Works</h2>
+
+        <!-- 16:9 GRID -->
+        <div class="card-grid works-landscape">
+            <!-- 16:9 cards -->
+            <div class="card work-video" data-video="images/video-1.mp4">
+                <div class="thumb-landscape">
+                    <img src="images/thumb-1.png" alt="Showreel">
+                </div>
+                <h3>Showreel 2026</h3>
+                <p>Highlights of my best video editing and motion graphics projects.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+
+            <div class="card work-video" data-video="images/video-2.mp4">
+                <div class="thumb-landscape">
+                    <img src="images/thumb-2.png" alt="Promo">
+                </div>
+                <h3>Promotional Edit</h3>
+                <p>Creative brand storytelling and transitions.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+
+            <div class="card work-video" data-video="videos/reel2.mp4">
+                <div class="thumb-landscape">
+                    <img src="images/thumb-3.png" alt="YouTube">
+                </div>
+                <h3>YouTube Video</h3>
+                <p>Long-form video editing with motion graphics.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+        </div>
+
+        <!-- SHORTS TITLE -->
+        <h2 class="section-title center" style="margin-top:60px;">Shorts</h2>
+
+        <!-- 9:16 GRID -->
+        <div class="card-grid works-shorts">
+            <div class="card work-video" data-video="images/reel-1.mp4">
+                <div class="thumb-vertical">
+                    <img src="images/thumb-shorts-1.png" alt="Short 1">
+                </div>
+                <h3>Instagram Reel</h3>
+                <p>High-energy short form edit.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+
+            <div class="card work-video" data-video="images/reel-2.mp4">
+                <div class="thumb-vertical">
+                    <img src="images/thumb-shorts-2.png" alt="Short 2">
+                </div>
+                <h3>YouTube Short</h3>
+                <p>Vertical storytelling format.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+
+            <div class="card work-video" data-video="videos/short3.mp4">
+                <div class="thumb-vertical">
+                    <img src="images/thumb-shorts-3.png" alt="Short 3">
+                </div>
+                <h3>Promo Reel</h3>
+                <p>Fast paced vertical content.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+    <span class="close-modal" id="closeVideoModal">&times;</span>
+    <video id="modalVideo" controls autoplay></video>
+</div>
+
+
+<div class="divider"></div>
+
+<!-- COURSES -->
+<section id="courses" class="section">
+    <div class="container">
+        <h2 class="section-title center">Courses & Certifications</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="images/course1.jpg" alt="Course">
+                <h3>Advanced Video Editing (Premiere Pro)</h3>
+                <p>Mastering editing, color grading, and visual storytelling.</p>
+            </div>
+            <div class="card">
+                <img src="images/course2.jpg" alt="Course">
+                <h3>Motion Graphics & After Effects</h3>
+                <p>Animating text, shapes, and visual effects for professional videos.</p>
+            </div>
+            <div class="card">
+                <img src="images/course3.jpg" alt="Course">
+                <h3>DaVinci Resolve Color Grading</h3>
+                <p>Professional color correction and grading techniques.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+    <div class="container">
+        <h2 class="section-title center">Experience</h2>
+        <div class="card">
+            <h3>Video Editor</h3>
+            <p><strong>2025 – Present</strong></p>
+            <p>
+                • Edited social media content, YouTube videos, and promotional clips.<br>
+                • Added motion graphics, transitions, and color grading.<br>
+                • Collaborated with clients to create storytelling-focused videos.<br>
+                • Optimized content for engagement and shareability.
+            </p>
+        </div>
+        <div class="card" style="margin-top:30px;">
+            <h3>Freelance Video Editor</h3>
+            <p><strong>2023 – 2025</strong></p>
+            <p>
+                • Delivered short-form videos for brands, YouTube creators, and social campaigns.<br>
+                • Focused on pacing, visual appeal, and client satisfaction.<br>
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <div class="container two-column">
+        <div>
+            <h2 class="section-title">Contact Me</h2>
+            <p>Email: gokulmani1973@gmail.com</p>
+            <p>Phone: +91 9095395121</p>
+            <p>Location: Salem, Tamil Nadu</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/gokulmani2004" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                <a href="https://www.facebook.com/share/1CEVw8CWbw/" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+            </div>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2026 Gokulmani | All Rights Reserved
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
