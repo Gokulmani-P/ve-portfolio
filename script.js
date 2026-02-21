@@ -70,21 +70,22 @@ videoModal.addEventListener("click", (e) => {
 
 
 
-/* ===== COURSE IMAGE VIEW ===== */
+/* ===== COURSE IMAGE POPUP FIX ===== */
 
-const courseImages = document.querySelectorAll("#courses .card img");
-const courseModal = document.getElementById("courseModal");
-const courseModalImg = document.getElementById("courseModalImg");
+const courseImgs = document.querySelectorAll("#courses .card img");
+const popup = document.getElementById("coursePopup");
+const popupImg = document.getElementById("popupImage");
 
-courseImages.forEach(img => {
+courseImgs.forEach(img => {
     img.addEventListener("click", () => {
-        courseModal.classList.add("active");
-        courseModalImg.src = img.src;
+        popup.classList.add("active");
+        popupImg.src = img.src;
         document.body.style.overflow = "hidden";
     });
 });
 
-courseModal.addEventListener("click", () => {
-    courseModal.classList.remove("active");
+popup.addEventListener("click", () => {
+    popup.classList.remove("active");
+    popupImg.src = "";
     document.body.style.overflow = "auto";
 });
