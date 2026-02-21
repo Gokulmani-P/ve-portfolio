@@ -1,491 +1,266 @@
-/* ================= GLOBAL ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #0F1A12;
-    color: #F5FFF0;
-    overflow-x: hidden;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* ================= BUTTONS ================= */
-.btn {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 24px;
-    background: #A3FF12;
-    color: #000;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #8CC500;
-    color: #000;
-}
-
-/* ================= HEADER ================= */
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 50px;
-    background: #111;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.logo a {
-    color: #A3FF12;
-    font-weight: 600;
-    font-size: 22px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    color: #fff;
-    font-size: 14px;
-    transition: 0.3s;
-    position: relative;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    color: #A3FF12;
-}
-
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0%;
-    height: 2px;
-    background: #A3FF12;
-    transition: 0.3s;
-}
-
-nav ul li a.active::after {
-    width: 100%;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    color: #A3FF12;
-    cursor: pointer;
-}
-
-/* ================= MOBILE NAV ================= */
-@media (max-width: 900px) {
-    nav {
-        position: fixed;
-        left: -250px;
-        top: 0;
-        width: 250px;
-        height: 100%;
-        background: #111;
-        padding: 60px 20px;
-        transition: 0.4s;
-    }
-
-    nav.active {
-        left: 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 20px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
-
-/* ================= SECTIONS ================= */
-.section {
-    padding: 130px 50px 80px;
-    scroll-margin-top: 130px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    width: 100%;
-}
-
-/* ================= TWO COLUMN GRID ================= */
-.two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-/* ================= HEADINGS ================= */
-.hero span {
-    color: #A3FF12;
-}
-
-h1 {
-    font-size: 38px;
-    margin-bottom: 12px;
-}
-
-h2 {
-    font-size: 26px;
-}
-
-.section-title {
-    margin-bottom: 25px;
-    position: relative;
-    text-align: center;
-}
-
-.section-title::after {
-    content: "";
-    width: 50px;
-    height: 3px;
-    background: #A3FF12;
-    display: block;
-    margin: 8px auto 0;
-}
-
-/* ================= IMAGE FRAMES ================= */
-.image-frame {
-    position: relative;
-    width: 300px;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-frame::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #A3FF12, #6BCF00);
-    border-radius: 30px;
-    transform: rotate(-8deg);
-    opacity: 0.12;
-    z-index: 0;
-    transition: 0.4s ease;
-}
-
-.image-frame::after {
-    content: "";
-    position: absolute;
-    width: 110%;
-    height: 110%;
-    background: radial-gradient(circle, rgba(163,255,18,0.25), transparent 70%);
-    border-radius: 35px;
-    filter: blur(40px);
-    z-index: 0;
-}
-
-.image-frame img {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 25px;
-    z-index: 1;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-    transition: 0.4s ease;
-}
-
-.image-frame:hover img {
-    transform: translateY(-10px);
-}
-
-.image-frame:hover::before {
-    transform: rotate(-4deg);
-    opacity: 0.18;
-}
-
-/* ================= TOOLS / SKILLS GRID ================= */
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.tool-box {
-    background: #1B2A1F;
-    padding: 16px 18px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: 0.3s;
-}
-
-.tool-box i {
-    font-size: 18px;
-    color: #A3FF12;
-}
-
-.tool-box:hover {
-    background: #556B3F;
-}
-
-/* CARD GRID */
-/* ===== GRID ===== */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 35px;
-}
-
-/* ===== CARD ===== */
-.card {
-    background: linear-gradient(145deg, #16261c, #0f1a12);
-    padding: 25px;
-    border-radius: 18px;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    transition: 0.3s;
-}
-
-.card h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    text-align: center;
-}
-
-.card p {
-    font-size: 14px;
-    text-align: center;
-    flex-grow: 1; /* pushes button to bottom */
-}
-
-.play-btn {
-    margin-top: 12px;
-    padding: 10px 22px;
-    border: none;
-    border-radius: 25px;
-    background: #A3FF12;
-    color: #000;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.play-btn:hover {
-    background: #8CC500;
-}
-
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-}
-
-/* ===== VIDEO MODAL BACKGROUND ===== */
-.video-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(8px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-/* Active modal */
-.video-modal.active {
-    display: flex;
-}
-
-/* Common video style */
-.video-modal video {
-    border-radius: 16px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-    max-height: 90vh;
-    object-fit: cover;
-}
-
-/* ===== SHORTS (9:16 Vertical) ===== */
-.video-modal.vertical video {
-    width: auto;
-    height: 85vh;
-    aspect-ratio: 9 / 16;
-    max-width: 420px;   /* controls desktop size */
-}
-
-/* ===== LANDSCAPE (16:9 Video) ===== */
-.video-modal.landscape video {
-    width: 85%;
-    max-width: 1100px;
-    height: auto;
-    aspect-ratio: 16 / 9;
-}
-
-/* Close button */
-.video-modal .close-btn {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    font-size: 32px;
-    color: white;
-    cursor: pointer;
-}
-
-
-
-/* ================= CONTACT FORM ================= */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 14px;
-    border-radius: 8px;
-    border: none;
-    width: 100%;
-}
-
-.contact-form button {
-    padding: 14px;
-    background: #A3FF12;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-/* ================= SOCIAL LINKS ================= */
-.social-links {
-    margin-top: 15px;
-    display: flex;
-    gap: 18px;
-}
-
-.social-links a {
-    color: #A3FF12;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    color: #6BCF00;
-}
-
-/* ================= DIVIDER ================= */
-.divider {
-    height: 1px;
-    width: 80%;
-    margin: 0 auto;
-    background: linear-gradient(to right, transparent, #A3FF12, transparent);
-    opacity: 0.6;
-}
-
-/* ================= FOOTER ================= */
-footer {
-    text-align: center;
-    padding: 18px;
-    background: #0C140E;
-    color: #A3FF12;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-    .two-column {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .section {
-        padding: 100px 30px 60px;
-    }
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
-    h2 {
-        font-size: 22px;
-    }
-}
-
-
-
-/* ================= COURSES PERFECT GRID FIX ================= */
-
-#courses .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
-    align-items: start;
-}
-
-/* Card clean look */
-#courses .card {
-    background: linear-gradient(145deg, #16261c, #0f1a12);
-    padding: 25px;
-    border-radius: 18px;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-/* IMAGE FULLY SHOWN */
-#courses .card img {
-    width: 100%;
-    height: auto;              /* VERY IMPORTANT */
-    object-fit: contain;       /* show full image */
-    border-radius: 14px;
-    cursor: pointer;
-    display: block;
-    background: none;          /* remove black box */
-}
-
-/* Optional subtle hover */
-#courses .card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-}
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gokulmani | Video Editor Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="logo"><a href="#home">Gokulmani</a></div>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section hero">
+    <div class="container two-column">
+        <div>
+            <h1>Hello, I'm <span>Gokulmani</span></h1>
+            <h2 id="animated-text">Video Editor | Crafting Engaging Stories</h2>
+            <p>Specializing in storytelling, post-production, motion graphics, and social media videos.</p>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+        <div class="image-frame">
+            <img src="images/profile.png" alt="Profile Image">
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <div class="container two-column">
+        <div class="image-frame">
+            <img src="images/about-me.png" alt="About Me">
+        </div>
+        <div>
+            <h2 class="section-title">About Me</h2>
+            <p>
+                I am a video editor with experience creating engaging content for social media platforms like YouTube, Instagram, and TikTok. 
+                I work on brand videos, reels, and short promotional clips that capture attention and communicate messages effectively.
+            </p>
+            <p>
+                Skilled in Adobe Premiere Pro, After Effects, CapCut, color grading, motion graphics, and audio editing. 
+                I focus on storytelling, pacing, and visual appeal to create content that resonates with viewers and drives engagement.
+            </p>
+
+            <div class="about-buttons">
+                <a href="images/VE-gokulmani-resume.pdf" class="btn resume-btn" download="VE-gokulmani-resume.pdf">
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title center">Skills & Tools</h2>
+        <div class="tools-grid">
+            <div class="tool-box"><i class="fa-solid fa-video"></i><span>Adobe Premiere Pro</span></div>
+            <div class="tool-box"><i class="fa-solid fa-film"></i><span>After Effects</span></div>
+            <div class="tool-box"><i class="fa-solid fa-clapperboard"></i><span>CapCut / Mobile Editing</span></div>
+            <div class="tool-box"><i class="fa-solid fa-palette"></i><span>Color Grading</span></div>
+            <div class="tool-box"><i class="fa-solid fa-music"></i><span>Audio Editing</span></div>
+            <div class="tool-box"><i class="fa-solid fa-play"></i><span>Motion Graphics</span></div>
+            <div class="tool-box"><i class="fa-solid fa-pen-nib"></i><span>Visual Storytelling</span></div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WORKS -->
+<section id="works" class="section">
+    <div class="container">
+        <h2 class="section-title center">My Video Works</h2>
+
+        <!-- 16:9 GRID -->
+        <div class="card-grid works-landscape">
+            <!-- 16:9 cards -->
+            <div class="card work-video" data-video="images/video-1.mp4">
+                <div class="thumb-landscape">
+                    <img src="images/thumb-1.png" alt="Showreel">
+                </div>
+                <h3>Showreel 2026</h3>
+                <p>Highlights of my best video editing and motion graphics projects.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+
+            <div class="card work-video" data-video="images/video-2.mp4">
+                <div class="thumb-landscape">
+                    <img src="images/thumb-2.png" alt="Promo">
+                </div>
+                <h3>Promotional Edit</h3>
+                <p>Creative brand storytelling and transitions.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+
+            <div class="card work-video" data-video="videos/reel2.mp4">
+                <div class="thumb-landscape">
+                    <img src="images/thumb-3.png" alt="YouTube">
+                </div>
+                <h3>YouTube Video</h3>
+                <p>Long-form video editing with motion graphics.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+        </div>
+
+        <!-- SHORTS TITLE -->
+        <h2 class="section-title center" style="margin-top:60px;">Shorts</h2>
+
+        <!-- 9:16 GRID -->
+        <div class="card-grid works-shorts">
+            <div class="card work-video" data-video="images/reel-1.mp4">
+                <div class="thumb-vertical">
+                    <img src="images/thumb-shorts-1.png" alt="Short 1">
+                </div>
+                <h3>Instagram Reel</h3>
+                <p>High-energy short form edit.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+
+            <div class="card work-video" data-video="images/reel-2.mp4">
+                <div class="thumb-vertical">
+                    <img src="images/thumb-shorts-2.png" alt="Short 2">
+                </div>
+                <h3>YouTube Short</h3>
+                <p>Vertical storytelling format.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+
+            <div class="card work-video" data-video="videos/short3.mp4">
+                <div class="thumb-vertical">
+                    <img src="images/thumb-shorts-3.png" alt="Short 3">
+                </div>
+                <h3>Promo Reel</h3>
+                <p>Fast paced vertical content.</p>
+                <button class="play-btn">Play Video</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+    <span class="close-modal" id="closeVideoModal">&times;</span>
+    <video id="modalVideo" controls autoplay></video>
+</div>
+
+
+<div class="divider"></div>
+
+<!-- COURSES -->
+<section id="courses" class="section">
+    <div class="container">
+        <h2 class="section-title center">Courses & Certifications</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="images/course-1.jpg" alt="Course">
+                <h3>Advanced Video Editing (Premiere Pro)</h3>
+                <p>Mastering editing, color grading, and visual storytelling.</p>
+            </div>
+            <div class="card">
+                <img src="images/course-2.jpg" alt="Course">
+                <h3>Motion Graphics & After Effects</h3>
+                <p>Animating text, shapes, and visual effects for professional videos.</p>
+            </div>
+            <div class="card">
+                <img src="images/course3.jpg" alt="Course">
+                <h3>DaVinci Resolve Color Grading</h3>
+                <p>Professional color correction and grading techniques.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- COURSE IMAGE MODAL -->
+<div class="course-modal" id="courseModal">
+    <img id="courseModalImg" src="" alt="Preview">
+</div>
+
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+    <div class="container">
+        <h2 class="section-title center">Experience</h2>
+        <div class="card">
+            <h3>Video Editor</h3>
+            <p><strong>2025 – Present</strong></p>
+            <p>
+                • Edited social media content, YouTube videos, and promotional clips.<br>
+                • Added motion graphics, transitions, and color grading.<br>
+                • Collaborated with clients to create storytelling-focused videos.<br>
+                • Optimized content for engagement and shareability.
+            </p>
+        </div>
+        <div class="card" style="margin-top:30px;">
+            <h3>Freelance Video Editor</h3>
+            <p><strong>2023 – 2025</strong></p>
+            <p>
+                • Delivered short-form videos for brands, YouTube creators, and social campaigns.<br>
+                • Focused on pacing, visual appeal, and client satisfaction.<br>
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <div class="container two-column">
+        <div>
+            <h2 class="section-title">Contact Me</h2>
+            <p>Email: gokulmani1973@gmail.com</p>
+            <p>Phone: +91 9095395121</p>
+            <p>Location: Salem, Tamil Nadu</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/gokulmani2004" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                <a href="https://www.facebook.com/share/1CEVw8CWbw/" target="_blank"><i class="fa-brands fa-facebook fa-2x"></i></a>
+            </div>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2026 Gokulmani | All Rights Reserved
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
