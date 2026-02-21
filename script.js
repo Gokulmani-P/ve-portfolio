@@ -67,3 +67,24 @@ videoModal.addEventListener("click", (e) => {
         modalVideo.src = "";
     }
 });
+
+
+
+/* ===== COURSE IMAGE VIEW ===== */
+
+const courseImages = document.querySelectorAll("#courses .card img");
+const courseModal = document.getElementById("courseModal");
+const courseModalImg = document.getElementById("courseModalImg");
+
+courseImages.forEach(img => {
+    img.addEventListener("click", () => {
+        courseModal.classList.add("active");
+        courseModalImg.src = img.src;
+        document.body.style.overflow = "hidden";
+    });
+});
+
+courseModal.addEventListener("click", () => {
+    courseModal.classList.remove("active");
+    document.body.style.overflow = "auto";
+});
