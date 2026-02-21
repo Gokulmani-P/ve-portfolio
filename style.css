@@ -273,13 +273,11 @@ h2 {
 
 /* ===== CARD ===== */
 .card {
-    background: #1B2A1F;
-    padding: 15px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.3s;
+    background: linear-gradient(145deg, #16261c, #0f1a12);
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s ease;
 }
 
 .card img {
@@ -319,6 +317,10 @@ h2 {
     background: #8CC500;
 }
 
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
 
 /* ===== VIDEO MODAL BACKGROUND ===== */
 .video-modal {
@@ -449,4 +451,41 @@ footer {
     h2 {
         font-size: 22px;
     }
+}
+
+
+
+/* ================= COURSES PERFECT GRID FIX ================= */
+
+#courses .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    align-items: start;
+}
+
+/* Card clean look */
+#courses .card {
+    background: linear-gradient(145deg, #16261c, #0f1a12);
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+/* IMAGE FULLY SHOWN */
+#courses .card img {
+    width: 100%;
+    height: auto;              /* VERY IMPORTANT */
+    object-fit: contain;       /* show full image */
+    border-radius: 14px;
+    cursor: pointer;
+    display: block;
+    background: none;          /* remove black box */
+}
+
+/* Optional subtle hover */
+#courses .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
 }
