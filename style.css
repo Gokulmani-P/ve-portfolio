@@ -455,33 +455,51 @@ footer {
 
 
 
-/* ================= COURSES PERFECT GRID FIX ================= */
+/* ================= COURSE POPUP PROFESSIONAL ================= */
 
-#courses .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
-    align-items: start;
+.course-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
 }
 
-/* Card clean look */
-#courses .card {
-    background: linear-gradient(145deg, #16261c, #0f1a12);
-    padding: 25px;
+.course-popup.active {
+    display: flex;
+}
+
+/* Professional ratio */
+.course-popup img {
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
     border-radius: 18px;
-    text-align: center;
-    transition: 0.3s ease;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+    animation: popupZoom 0.3s ease;
 }
 
-/* IMAGE FULLY SHOWN */
+/* Smooth zoom animation */
+@keyframes popupZoom {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===== COURSES IMAGE FULL FIX ===== */
 #courses .card img {
-    width: 100%;
-    height: auto;              /* VERY IMPORTANT */
-    object-fit: contain;       /* show full image */
-    border-radius: 14px;
-    cursor: pointer;
-    display: block;
-    background: none;          /* remove black box */
+    height: auto !important;      /* remove fixed height */
+    object-fit: contain !important; /* show full image */
+    background: none;
 }
 
 /* Optional subtle hover */
