@@ -35,39 +35,51 @@ window.addEventListener("scroll", () => {
 const menuToggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav");
 menuToggle.addEventListener("click", () => nav.classList.toggle("active"));
+/* ================= CLEAN PROFESSIONAL VIDEO OVERLAY ================= */
 
-// VIDEO MODAL SCRIPT
-const videoModal = document.getElementById("videoModal");
-const modalVideo = document.getElementById("modalVideo");
-const closeVideoModal = document.getElementById("closeVideoModal");
+const worksCards = document.querySelectorAll("#works .work-video");
+const overlay = document.getElementById("videoOverlay");
+const overlayVideo = document.getElementById("overlayVideo");
 
-// Open modal when play button is clicked
-document.querySelectorAll(".card .play-btn").forEach(button => {
-    button.addEventListener("click", (e) => {
-        e.stopPropagation(); // prevent card click if needed
-        const card = e.target.closest(".work-video");
-        const videoSrc = card.getAttribute("data-video");
-        modalVideo.src = videoSrc;
-        videoModal.classList.add("active");
+worksCards.forEach(card => {
+    const button = card.querySelector(".play-btn");
+    const videoSrc = card.getAttribute("data-video");
+
+    button.addEventListener("click", () => {
+        overlayVideo.src = videoSrc;
+        overlayVideo.play();
+
+        if (card.closest(".works-shorts")) {
+            overlay.classList.add("portrait");
+            overlay.classList.remove("landscape");
+        } else {
+            overlay.classList.add("landscape");
+            overlay.classList.remove("portrait");
+        }
+
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
     });
 });
 
-// Close modal
-closeVideoModal.addEventListener("click", () => {
-    videoModal.classList.remove("active");
-    modalVideo.pause();
-    modalVideo.src = "";
-});
-
-// Close modal when clicking outside video
-videoModal.addEventListener("click", (e) => {
-    if (e.target === videoModal) {
-        videoModal.classList.remove("active");
-        modalVideo.pause();
-        modalVideo.src = "";
+/* Close when clicking background */
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        closeVideo();
     }
 });
 
+/* Auto close when finished */
+overlayVideo.addEventListener("ended", () => {
+    closeVideo();
+});
+
+function closeVideo() {
+    overlay.classList.remove("active", "portrait", "landscape");
+    overlayVideo.pause();
+    overlayVideo.src = "";
+    document.body.style.overflow = "auto";
+}
 
 
 /* ===== COURSE IMAGE POPUP FIX ===== */
