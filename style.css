@@ -323,54 +323,49 @@ h2 {
 }
 
 /* ===== VIDEO MODAL BACKGROUND ===== */
-.video-modal {
+/* ===== VIDEO OVERLAY BACKGROUND ===== */
+
+.video-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(8px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-/* Active modal */
-.video-modal.active {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-/* Common video style */
-.video-modal video {
+.video-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== VIDEO BASE STYLE ===== */
+
+.video-overlay video {
+    max-width: 90vw;
+    max-height: 85vh;
     border-radius: 16px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-    max-height: 90vh;
-    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    background: black;
 }
 
-/* ===== SHORTS (9:16 Vertical) ===== */
-.video-modal.vertical video {
-    width: auto;
-    height: 85vh;
-    aspect-ratio: 9 / 16;
-    max-width: 420px;   /* controls desktop size */
-}
+/* ===== LANDSCAPE (16:9) ===== */
 
-/* ===== LANDSCAPE (16:9 Video) ===== */
-.video-modal.landscape video {
-    width: 85%;
-    max-width: 1100px;
-    height: auto;
+.video-overlay.landscape video {
+    width: min(850px, 85vw);
     aspect-ratio: 16 / 9;
 }
 
-/* Close button */
-.video-modal .close-btn {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    font-size: 32px;
-    color: white;
-    cursor: pointer;
+/* ===== PORTRAIT (9:16) ===== */
+
+.video-overlay.portrait video {
+    height: min(75vh, 750px);
+    aspect-ratio: 9 / 16;
 }
 
 
